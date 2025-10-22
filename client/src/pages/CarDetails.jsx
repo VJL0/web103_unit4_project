@@ -1,13 +1,8 @@
-import React from 'react'
-import '../App.css'
+import React from "react";
+import "../App.css";
 
 const CarDetails = () => {
+  return <div></div>;
+};
 
-    return (
-        <div>
-
-        </div>
-    )
-}
-
-export default CarDetails
+export default CarDetails;

@@ -1,13 +1,8 @@
-import React from 'react'
-import '../App.css'
+import React from "react";
+import "../App.css";
 
 const EditCar = () => {
-    
-    return (
-        <div>
+  return <div></div>;
+};
 
-        </div>
-    )
-}
-
-export default EditCar
+export default EditCar;
