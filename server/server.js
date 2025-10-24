@@ -17,6 +17,8 @@ app.use("/api/roof", roofsRouter);
 app.use("/api/interior", interiorsRouter);
 app.use("/api/exterior", exteriorsRouter);
 
+
+
 if (process.env.NODE_ENV === "development") {
   app.use(favicon(path.resolve("../", "client", "public", "lightning.png")));
 } else if (process.env.NODE_ENV === "production") {

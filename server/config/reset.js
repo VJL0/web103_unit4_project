@@ -36,6 +36,15 @@ const resetDatabase = async () => {
         image VARCHAR(255) NOT NULL,
         price DECIMAL(10, 2) NOT NULL
       );
+      CREATE TABLE IF NOT EXISTS custom (
+        id SERIAL PRIMARY KEY,
+        exterior TEXT NOT NULL,
+        interior TEXT NOT NULL,
+        roof TEXT NOT NULL,
+        wheels TEXT NOT NULL,
+        isconvertible BOOLEAN NOT NULL,
+        price TEXT NOT NULL
+      );
     `);
 
     await client.query(`
