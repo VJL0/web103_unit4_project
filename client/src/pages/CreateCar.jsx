@@ -22,6 +22,8 @@ const CreateCar = ({ title }) => {
 
   const [total, setTotal] = useState(65000);
 
+  const [error, setError] = useState(false);
+
   useEffect(() => {
     const base = 65000;
     const sum =
@@ -95,7 +97,14 @@ const CreateCar = ({ title }) => {
     // e.g., { name: carName, isConvertible, selectedExterior, selectedInterior, selectedRoof, selectedWheels, total }
   };
 
-  console.log(active);
+  // helper: normalize whatever the API sends
+  const optionRequiresConvertible = (opt) =>
+    Boolean(opt?.isConvertible ?? opt?.isconvertible ?? opt?.convertible);
+
+  // clear error when the switch changes
+  useEffect(() => {
+    setError(false);
+  }, [isConvertible]);
 
   return (
     <div className="relative">
@@ -136,6 +145,12 @@ const CreateCar = ({ title }) => {
         </div>
       </div>
 
+
+      {error && (
+        <div className="text-red-500 m-2">
+          Error: Selected option is not compatible with current car type.
+        </div>
+      )}
       {active && (
         <div className="p-2 pb-0">
           {/* This was the crash: use active.data?.map, not selected.map */}
@@ -148,6 +163,15 @@ const CreateCar = ({ title }) => {
                     active?.selected?.id == opt.id ? "bg-green-900!" : ""
                   }`}
                   onClick={() => {
+                    const requiresConv = optionRequiresConvertible(opt);
+
+                    // Block only when the option requires convertible but the switch is OFF
+                    if (requiresConv && !isConvertible) {
+                      setError(true);
+                      return;
+                    }
+
+                    setError(false);
                     active.setter(opt);
                     setActiveTab(null);
                   }}

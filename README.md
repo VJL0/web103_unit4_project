@@ -21,7 +21,7 @@ The following **required** functionality is completed:
 - [x] **The price of the `CustomItem` (e.g. car) changes dynamically as different options are selected *OR* The app displays the total price of all features.**
 - [x] **The visual interface changes in response to at least one customizable feature.**
 - [ ] **The user can submit their choices to save the item to the list of created `CustomItem`s.**
-- [ ] **If a user submits a feature combo that is impossible, they should receive an appropriate error message and the item should not be saved to the database.**
+- [x] **If a user submits a feature combo that is impossible, they should receive an appropriate error message and the item should not be saved to the database.**
 - [ ] **Users can view a list of all submitted `CustomItem`s.**
 - [ ] **Users can edit a submitted `CustomItem` from the list view of submitted `CustomItem`s.**
 - [ ] **Users can delete a submitted `CustomItem` from the list view of submitted `CustomItem`s.**
@@ -52,6 +52,9 @@ GIF created with ...  GIF tool here
 ## Notes
 
 Describe any challenges encountered while building the app or any additional context you'd like to add.
+
+
+I hate JavaScript. It didn't help me at all. I'm used to TypeScript giving me type checks and auto-completion. 
 
 ## License
 
