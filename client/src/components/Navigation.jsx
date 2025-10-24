@@ -1,10 +1,9 @@
-import React from "react";
 import "../App.css";
 import "../css/Navigation.css";
 
 const Navigation = () => {
   return (
-    <nav>
+    <nav className="navbar">
       <ul>
         <li>
           <h1>Bolt Bucket 🏎️</h1>

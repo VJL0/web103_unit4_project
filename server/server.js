@@ -13,9 +13,9 @@ const app = express();
 app.use(express.json());
 
 app.use("/api/wheels", wheelsRouter);
-app.use("/api/roofs", roofsRouter);
-app.use("/api/interiors", interiorsRouter);
-app.use("/api/exteriors", exteriorsRouter);
+app.use("/api/roof", roofsRouter);
+app.use("/api/interior", interiorsRouter);
+app.use("/api/exterior", exteriorsRouter);
 
 if (process.env.NODE_ENV === "development") {
   app.use(favicon(path.resolve("../", "client", "public", "lightning.png")));
